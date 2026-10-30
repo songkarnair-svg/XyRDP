@@ -1,50 +1,184 @@
 {
-  "active": false,
-  "hostname": "rdpfree-28",
-  "os": "Ubuntu 22.04.5 LTS (XFCE4 Desktop)",
-  "os_style": "Linux XFCE4 Desktop",
-  "linux_mode": "desktop",
-  "rdp_port": 3389,
-  "ssh_port": 22,
-  "rdp_user": "phu",
-  "rdp_listen": "LISTENING :3389 (xrdp) + :22 (ssh)",
-  "started_at": "2026-10-30T06:28:31Z",
-  "expires_at": "2026-10-30T12:10:31Z",
-  "heartbeat_at": "2026-10-30T07:17:56Z",
-  "duration_menit": 342,
-  "run_id": "41014073717",
-  "run_attempt": "1",
-  "run_number": "28",
-  "run_url": "https://github.com/songkarnair-svg/XyRDP/actions/runs/41014073717",
+  "active": true,
+  "hostname": "rdpfree-29",
+  "os": "Microsoft Windows Server 2025 Datacenter",
+  "os_build": "10.0.26100",
+  "os_style": "Native Windows",
   "hardware": {
-    "cpu_threads": 4,
-    "cpu_cores": 4,
-    "cpu_load_pct": 5,
-    "ram_gb": 15.6,
-    "ram_total_gb": 15.6,
-    "ram_used_gb": 1,
-    "disk_total_gb": 146,
-    "disk_free_gb": 85,
-    "disk_used_gb": 62,
-    "uptime_minutes": 49
+    "ram_gb": 16.0,
+    "disk_free_gb": 29.2,
+    "cpu_threads": 4
+  },
+  "rdp_port": 3389,
+  "rdp_user": "phu",
+  "rdp_listen": ":::3389 (svchost) | 0.0.0.0:3389 (svchost) + handshake ok via 127.0.0.1",
+  "rdp_denyts": true,
+  "started_at": "2026-10-30T11:07:44Z",
+  "expires_at": "2026-10-30T16:49:44Z",
+  "duration_menit": 342,
+  "run_id": "41045683995",
+  "run_attempt": "1",
+  "run_number": "29",
+  "run_url": "https://github.com/songkarnair-svg/XyRDP/actions/runs/41045683995",
+  "mode": "bersih+win10",
+  "persist": {
+    "restored": true,
+    "files": 436,
+    "profile": "C:\\Users\\phu",
+    "source": "xyrdp-state.7z.enc"
+  },
+  "storage": {
+    "status": "ok",
+    "mode": "boost-ringan",
+    "before_gb": 29.06,
+    "after_gb": 46.53,
+    "gained_gb": 17.47,
+    "removed_targets": 31,
+    "drives": [
+      {
+        "used_gb": 103.36,
+        "free_gb": 46.53,
+        "size_gb": 149.89,
+        "letter": "C"
+      },
+      {
+        "used_gb": 3.0,
+        "free_gb": 147.0,
+        "size_gb": 150.0,
+        "letter": "D"
+      }
+    ],
+    "game_dir": "D:\\Games (disarankan untuk GTA)",
+    "note": "Cleanup selesai. gained_gb adalah perubahan ruang aktual, bukan kapasitas yang dijanjikan. Target terkunci bisa tersisa.",
+    "updated_at": "2026-10-30T11:13:59.226624Z"
+  },
+  "fps_boost": {
+    "status": "ok",
+    "applied": [
+      "Power plan High Performance",
+      "RDP DWMFRAMEINTERVAL 15 (target 60 fps)",
+      "RDP: matikan wallpaper/full-drag saat remote",
+      "Game Mode + Game Bar auto",
+      "Hardware-Accelerated GPU Scheduling (jika didukung)",
+      "VisualFXSetting = best performance",
+      "Prioritas CPU/IO proses game"
+    ],
+    "skipped": [],
+    "applied_count": 7,
+    "elapsed_sec": 2.2,
+    "note": "Tweak rendering RDP & scheduler OS. Tidak menaikkan FPS game 3D tanpa GPU fisik; Mesa3D/WARP tetap dipakai.",
+    "updated_at": "2026-10-30T11:14:01.8692162Z"
+  },
+  "media": {
+    "wallpaper": "xyverse_configured_for_user_logon",
+    "audio_output": "rdp_playback_enabled",
+    "verification": "Login ulang, aktifkan mic di XyDesk dan izinkan Android. Uji Windows Settings > Sound > Input; kebijakan aktif bukan bukti capture end-to-end.",
+    "microphone": "rdp_capture_enabled"
+  },
+  "grafis": {
+    "adapters": "Microsoft Hyper-V Video",
+    "mesa": "26.2.4",
+    "path": "C:\\XyRDP\\grafis\\mesa-x64",
+    "vulkan": "lavapipe 1.3 (CPU)",
+    "opengl": "4.6 (Mesa llvmpipe system-wide x64/x86 + OpenGL ES 3.2)",
+    "mode": "software"
+  },
+  "samp": {
+    "directx9": true,
+    "silentpatch": false,
+    "fullscreen": true,
+    "vc2015_x64": true,
+    "vc2013_x86": true,
+    "dgvoodoo_d3d9": true,
+    "vc2013_x64": true,
+    "samp_client": true,
+    "dep_optin": true,
+    "status": "runtimes-2026-ready",
+    "vc2015_x86": true,
+    "game_present": true,
+    "playable": true,
+    "directplay": true,
+    "webview2": true
+  },
+  "games": {
+    "memu": {
+      "launcher": "C:\\Games\\MEmu\\Launch-MEmu.ps1",
+      "status": "ready"
+    },
+    "blender": {
+      "launcher": "C:\\Games\\Blender\\Launch-Blender.ps1",
+      "status": "ready"
+    },
+    "fivem": {
+      "sound": true,
+      "status": true
+    },
+    "minecraft_java": {
+      "tlauncher_jar": true,
+      "opengl46": true,
+      "prismlauncher": true,
+      "official_exe": true,
+      "status": "ready"
+    },
+    "ets2": {
+      "launcher": "C:\\Games\\ETS2\\Launch-ETS2-Free.ps1",
+      "status": "ready"
+    },
+    "minecraft_bedrock": {
+      "path": "C:\\XyRDP\\deps\\games\\MinecraftInstaller.msi",
+      "status": "installed"
+    },
+    "roblox": {
+      "launcher": "C:\\Games\\Roblox\\Launch-Roblox-AntiVM.ps1",
+      "status": "ready-antivm"
+    }
+  },
+  "extras": {
+    "lightshot": "ok",
+    "wallpaper": "ok",
+    "wallpaper_file": "wallpaper.jpg",
+    "vscode": "skip",
+    "notepadpp": "skip",
+    "admin": true
+  },
+  "tools_hub": {
+    "auto_start": true,
+    "installed": true,
+    "exe": "C:\\XyRDP\\tools\\XyDeskDashboard.exe"
+  },
+  "xydesk": {
+    "host": "ok",
+    "denyts": "ok",
+    "multisession": "ok",
+    "avc444": "ok (WDDM off + AVC software + DWMFRAMEINTERVAL=15 + TCPNoDelay=1)",
+    "fontsmoothing": "ok (ClearType profil Default)",
+    "audio_out": "ok (policy fDisableAudio=0, WinStations=0)",
+    "audio_mic": "ok (policy fDisableAudioCapture=0, WinStations=0) - mic HP redirect aktif, Allow di HP",
+    "wallpaper_rdp": "ok (policy fNoRemoteDesktopWallpaper=0) - wallpaper RDP tampil, cek client Experience->Wallpaper ON",
+    "firewall": "tcp3389=True udp3389=True udp4433=True",
+    "services": "ok",
+    "rdp_ready": "127.0.0.1 (handshake OK)",
+    "rdp_probe": "awal=True multi=True audio=True grafis=True clear=True fw=True svc=True",
+    "quic_udp4433": "dibuka di VM (tidak lewat tunnel TCP)",
+    "akses": "(menyusul)",
+    "note": "Host siap dipakai klien XyDesk Remote mode Koneksi RDP (Host+Port tunnel). Kunci WinStations\\RDP-Tcp sengaja TIDAK ditulis supaya listener 3389 tidak mati di runner GitHub."
   },
   "akses": {
     "mode": "tailscale",
     "tailscale": {
+      "magicdns": "rdpfree-10.tail3c033f.ts.net.",
       "status": "ok",
-      "ip": "100.89.135.37",
-      "hostname": "rdpfree-28",
-      "port": 3389,
-      "ssh_port": 22,
-      "connect": "100.89.135.37:3389"
+      "hostname": "rdpfree",
+      "ip": "100.89.22.52",
+      "note": "HP/PC harus login Tailscale pada tailnet yang sama. TCP 3389 harus diizinkan ACL."
     },
     "tunnel": {
-      "status": "ok",
-      "type": "tailscale",
-      "host": "100.89.135.37",
+      "address": "100.89.22.52:3389",
       "port": 3389,
-      "address": "100.89.135.37:3389",
-      "connect": "100.89.135.37:3389"
+      "host": "100.89.22.52",
+      "status": "ok",
+      "outside": "tailscale",
+      "selftest": "ok"
     }
   }
 }
