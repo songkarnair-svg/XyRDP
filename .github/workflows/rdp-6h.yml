@@ -3,6 +3,11 @@
 #         dan opsi akses portmap/railway. Penanda skema sengaja tetap 5 supaya
 #         kontrak web-next/src/lib/workflow-contract.ts tetap menerima workflow.
 #         Input baru semuanya required:false, jadi repo lama tetap kompatibel.
+# 1.1.29: tunnel Tailscale only. Opsi portmap/railway dihapus (sesuai arahan
+#         pemilik: "Untuk Tunnel cukup tailscale only"). Input akses tetap ada
+#         dengan satu pilihan agar dashboard & kontrak lama tetap kompatibel.
+#         Runtime dibagi cepat/penuh (input runtimes, default auto) + cache
+#         installer (actions/cache) supaya setup sesi jauh lebih cepat.
 name: RdpFree — RDP 6 Jam
 
 on:
@@ -24,24 +29,12 @@ on:
         default: 'xyadmin'
         type: string
       akses:
-        description: 'Jalur akses ke RDP (tailscale disarankan)'
+        description: 'Jalur akses ke RDP (hanya Tailscale)'
         required: false
         default: 'tailscale'
         type: choice
         options:
           - tailscale
-          - portmap
-          - railway
-      portmap_host:
-        description: 'Host tunnel publik (opsional; isi saat akses portmap/railway)'
-        required: false
-        default: ''
-        type: string
-      portmap_port:
-        description: 'Port publik tunnel (opsional; kosong = 3389)'
-        required: false
-        default: ''
-        type: string
       storage_boost:
         description: 'Bersihkan toolcache untuk ruang disk ekstra'
         required: false
@@ -59,6 +52,15 @@ on:
           - ringan
           - full
           - tidak
+      runtimes:
+        description: 'Runtime VC++/DirectX/.NET (auto = penuh hanya bila SA-MP dipilih; cepat = VC++ 2010-2022)'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - cepat
+          - penuh
       samp:
         description: 'Pasang runtime + SilentPatch GTA SA & SA-MP'
         required: false
@@ -215,12 +217,10 @@ jobs:
       STORAGE_BOOST: ${{ inputs.storage_boost || 'ya' }}
       DEBLOAT: ${{ inputs.debloat || 'ringan' }}
       SAMP: ${{ inputs.samp || 'ya' }}
+      RUNTIMES: ${{ inputs.runtimes || 'auto' }}
       SAMP_ANTIBAN: ${{ inputs.samp_antiban || 'tidak' }}
       FPS_BOOST: ${{ inputs.fps_boost || 'ya' }}
       MUMU: ${{ inputs.mumu || 'tidak' }}
-      PORTMAP_HOST: ${{ inputs.portmap_host || '' }}
-      PORTMAP_PORT: ${{ inputs.portmap_port || '' }}
-      PORTMAP_OVPN_CONFIG: ${{ secrets.PORTMAP_OVPN_CONFIG }}
       WIN10: ${{ inputs.win10 || 'ya' }}
       XYDESK: ${{ inputs.xydesk || 'ya' }}
       EKSTRA: ${{ inputs.ekstra || 'ya' }}
@@ -273,11 +273,22 @@ jobs:
         shell: pwsh
         run: ./scripts/setup-rdp.ps1
 
+      - name: Cache installer runtime
+        if: ${{ !startsWith(inputs.runner || 'windows-2022', 'ubuntu') }}
+        uses: actions/cache@v4
+        with:
+          path: ~/xyrt-cache
+          key: xyrt-runtimes-v1-${{ hashFiles('scripts/setup-runtimes.ps1') }}
+          restore-keys: |
+            xyrt-runtimes-v1-
+
       - name: Runtime aplikasi & game (VC++/DirectX/.NET)
         timeout-minutes: 12
         if: ${{ !startsWith(inputs.runner || 'windows-2022', 'ubuntu') }}
         shell: pwsh
         continue-on-error: true
+        env:
+          XYRT_MODE: ${{ (inputs.runtimes == 'penuh' || ((inputs.runtimes || 'auto') == 'auto' && (inputs.samp || 'ya') == 'ya')) && 'penuh' || 'cepat' }}
         run: ./scripts/setup-runtimes.ps1
 
       - name: Pulihkan simpanan sesi sebelumnya
@@ -373,13 +384,6 @@ jobs:
         shell: pwsh
         run: ./scripts/setup-akses.ps1
 
-      - name: Setup akses publik (Portmap / Railway)
-        timeout-minutes: 12
-        if: ${{ !startsWith(inputs.runner || 'windows-2022', 'ubuntu') && (inputs.akses || 'tailscale') != 'tailscale' }}
-        shell: pwsh
-        continue-on-error: true
-        run: ./scripts/setup-public-tunnel.ps1
-
       - name: Pasang Discord desktop
         if: ${{ !startsWith(inputs.runner || 'windows-2022', 'ubuntu') && (inputs.discord || 'tidak') == 'ya' }}
         shell: pwsh
@@ -441,12 +445,11 @@ jobs:
               akses               = "$($env:AKSES)"
               storage_boost       = "$($env:STORAGE_BOOST)"
               debloat             = "$($env:DEBLOAT)"
+              runtimes            = "$($env:RUNTIMES)"
               samp                = "$($env:SAMP)"
               samp_antiban        = "$($env:SAMP_ANTIBAN)"
               fps_boost           = "$($env:FPS_BOOST)"
               mumu                = "$($env:MUMU)"
-              portmap_host        = "$($env:PORTMAP_HOST)"
-              portmap_port        = "$($env:PORTMAP_PORT)"
               win10               = "$($env:WIN10)"
               xydesk              = "$($env:XYDESK)"
               ekstra              = "$($env:EKSTRA)"
