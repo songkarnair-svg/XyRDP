@@ -1,25 +1,25 @@
 {
   "active": true,
-  "hostname": "windows11-37",
+  "hostname": "windows11-38",
   "os": "Microsoft Windows Server 2025 Datacenter",
   "os_build": "10.0.26100",
   "os_style": "Native Windows",
   "hardware": {
     "ram_gb": 16.0,
     "cpu_threads": 4,
-    "disk_free_gb": 27.0
+    "disk_free_gb": 29.9
   },
   "rdp_port": 3389,
   "rdp_user": "phu",
   "rdp_listen": ":::3389 (svchost) | 0.0.0.0:3389 (svchost) + handshake ok via 127.0.0.1",
   "rdp_denyts": true,
-  "started_at": "2026-11-09T17:46:24Z",
-  "expires_at": "2026-11-09T23:28:24Z",
+  "started_at": "2026-11-09T23:45:55Z",
+  "expires_at": "2026-11-10T05:27:55Z",
   "duration_menit": 342,
-  "run_id": "42667669628",
+  "run_id": "42722914896",
   "run_attempt": "1",
-  "run_number": "37",
-  "run_url": "https://github.com/songkarnair-svg/XyRDP/actions/runs/42667669628",
+  "run_number": "38",
+  "run_url": "https://github.com/songkarnair-svg/XyRDP/actions/runs/42722914896",
   "mode": "bersih+win10",
   "runtimes": {
     "mode": "penuh",
@@ -39,35 +39,35 @@
     "net35": "sudah ada"
   },
   "persist": {
-    "profile": "C:\\Users\\phu",
-    "source": "xyrdp-state.7z.enc",
     "restored": true,
-    "files": 9
+    "source": "xyrdp-state.7z.enc",
+    "files": 9,
+    "profile": "C:\\Users\\phu"
   },
   "storage": {
     "status": "ok",
     "mode": "boost-full",
-    "before_gb": 26.55,
-    "after_gb": 44.07,
-    "gained_gb": 17.52,
+    "before_gb": 29.41,
+    "after_gb": 46.97,
+    "gained_gb": 17.56,
     "removed_targets": 34,
     "drives": [
       {
-        "free_gb": 44.07,
+        "free_gb": 46.97,
         "size_gb": 149.89,
-        "letter": "C",
-        "used_gb": 105.82
+        "used_gb": 102.92,
+        "letter": "C"
       },
       {
-        "free_gb": 219.84,
-        "size_gb": 219.98,
-        "letter": "D",
-        "used_gb": 0.14
+        "free_gb": 146.98,
+        "size_gb": 150.0,
+        "used_gb": 3.01,
+        "letter": "D"
       }
     ],
     "game_dir": "D:\\Games (disarankan untuk GTA)",
     "note": "Cleanup selesai. gained_gb adalah perubahan ruang aktual, bukan kapasitas yang dijanjikan. Target terkunci bisa tersisa.",
-    "updated_at": "2026-11-09T17:57:56.721493Z"
+    "updated_at": "2026-11-09T23:54:51.6129731Z"
   },
   "fps_boost": {
     "status": "ok",
@@ -83,65 +83,50 @@
     ],
     "skipped": [],
     "applied_count": 8,
-    "elapsed_sec": 2.1,
+    "elapsed_sec": 2.2,
     "note": "Tweak rendering RDP & scheduler OS. Tidak menaikkan FPS game 3D tanpa GPU fisik; Mesa3D/WARP tetap dipakai.",
-    "updated_at": "2026-11-09T17:57:59.2687239Z"
+    "updated_at": "2026-11-09T23:54:54.2923609Z"
   },
   "media": {
-    "wallpaper": "xyverse_configured_for_user_logon",
-    "verification": "Login ulang, aktifkan mic di XyDesk dan izinkan Android. Uji Windows Settings > Sound > Input; kebijakan aktif bukan bukti capture end-to-end.",
     "audio_output": "rdp_playback_enabled",
-    "microphone": "rdp_capture_enabled"
+    "wallpaper": "xyverse_configured_for_user_logon",
+    "microphone": "rdp_capture_enabled",
+    "verification": "Login ulang, aktifkan mic di XyDesk dan izinkan Android. Uji Windows Settings > Sound > Input; kebijakan aktif bukan bukti capture end-to-end."
   },
   "samp": {
+    "silentpatch": false,
+    "vc2015_x86": true,
+    "playable": true,
+    "dep_optin": true,
+    "vc2015_x64": true,
     "status": "runtimes-2026-ready",
+    "samp_client": true,
     "dgvoodoo_d3d9": true,
     "fullscreen": true,
-    "directx9": true,
-    "webview2": true,
     "directplay": true,
     "vc2013_x86": true,
-    "game_present": true,
-    "playable": true,
-    "vc2015_x64": true,
-    "vc2015_x86": true,
-    "dep_optin": true,
     "vc2013_x64": true,
-    "silentpatch": false,
-    "samp_client": true
+    "webview2": true,
+    "directx9": true,
+    "game_present": true
   },
   "grafis": {
-    "path": "C:\\XyRDP\\grafis\\mesa-x64",
-    "adapters": "Microsoft Hyper-V Video",
-    "mesa": "26.2.6",
     "opengl": "4.6 (Mesa llvmpipe system-wide x64/x86 + OpenGL ES 3.2)",
+    "adapters": "Microsoft Hyper-V Video",
+    "path": "C:\\XyRDP\\grafis\\mesa-x64",
     "vulkan": "lavapipe 1.3 (CPU)",
-    "mode": "software"
+    "mode": "software",
+    "mesa": "26.2.6"
   },
   "games": {
-    "minecraft_java": {
-      "status": "ready",
-      "tlauncher_jar": true,
-      "official_exe": true,
-      "opengl46": false,
-      "prismlauncher": true
-    },
     "roblox": {
+      "launcher": "C:\\Games\\Roblox\\Launch-Roblox-AntiVM.ps1",
       "status": "installer_ready",
-      "catatan": "Instalasi resmi Roblox siap. VM dapat ditolak anti-cheat Roblox; tidak ada spoofing BIOS/bypass.",
-      "launcher": "C:\\Games\\Roblox\\Launch-Roblox-AntiVM.ps1"
-    },
-    "ets2": {
-      "launcher": "C:\\Games\\ETS2\\Launch-ETS2-Free.ps1",
-      "status": "ready"
+      "catatan": "Instalasi resmi Roblox siap. VM dapat ditolak anti-cheat Roblox; tidak ada spoofing BIOS/bypass."
     },
     "fivem": {
       "sound": true,
       "status": true
-    },
-    "minecraft_bedrock": {
-      "path": "C:\\XyRDP\\deps\\games\\MinecraftInstaller.msi",
-      "status": "installed"
     },
     "memu": {
       "launcher": "C:\\Games\\MEmu\\Launch-MEmu.ps1",
@@ -149,6 +134,21 @@
     },
     "blender": {
       "launcher": "C:\\Games\\Blender\\Launch-Blender.ps1",
+      "status": "ready"
+    },
+    "minecraft_java": {
+      "prismlauncher": true,
+      "tlauncher_jar": true,
+      "opengl46": false,
+      "status": "ready",
+      "official_exe": true
+    },
+    "minecraft_bedrock": {
+      "status": "installed",
+      "path": "C:\\XyRDP\\deps\\games\\MinecraftInstaller.msi"
+    },
+    "ets2": {
+      "launcher": "C:\\Games\\ETS2\\Launch-ETS2-Free.ps1",
       "status": "ready"
     }
   },
@@ -161,9 +161,9 @@
     "admin": true
   },
   "tools_hub": {
-    "exe": "C:\\XyRDP\\tools\\XyDeskDashboard.exe",
+    "auto_start": true,
     "installed": true,
-    "auto_start": true
+    "exe": "C:\\XyRDP\\tools\\XyDeskDashboard.exe"
   },
   "xydesk": {
     "host": "ok",
@@ -185,19 +185,19 @@
   "akses": {
     "mode": "tailscale",
     "tailscale": {
-      "note": "HP/PC harus login Tailscale pada tailnet yang sama. TCP 3389 harus diizinkan ACL.",
-      "ip": "100.84.195.48",
-      "status": "ok",
       "hostname": "windows11",
-      "magicdns": "windows11-1.tail3c033f.ts.net."
+      "ip": "100.70.82.64",
+      "note": "HP/PC harus login Tailscale pada tailnet yang sama. TCP 3389 harus diizinkan ACL.",
+      "magicdns": "windows11-2.tail3c033f.ts.net.",
+      "status": "ok"
     },
     "tunnel": {
-      "host": "100.84.195.48",
-      "status": "ok",
-      "address": "100.84.195.48:3389",
       "outside": "tailscale",
+      "selftest": "ok",
+      "status": "ok",
+      "address": "100.70.82.64:3389",
       "port": 3389,
-      "selftest": "ok"
+      "host": "100.70.82.64"
     }
   }
 }
